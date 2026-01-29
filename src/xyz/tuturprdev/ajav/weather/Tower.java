@@ -8,7 +8,7 @@ public class Tower {
 
     public void register(Flyable p_flyable)
     {
-        return ;
+        observers.add(p_flyable);
     }
 
     public void unregister(Flyable p_flyable)
@@ -17,6 +17,8 @@ public class Tower {
     }
     protected void conditionChanged()
     {
-        return ;
+        for (Flyable f : observers) {
+            f.updateConditions();
+        }
     }
 }
