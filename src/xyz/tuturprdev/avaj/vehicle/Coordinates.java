@@ -24,11 +24,23 @@ public class Coordinates {
         return this.longitude;
     }
 
+    public void setLongitude(int changed) {
+        longitude = changed;
+    }
+
     public int getLatitude() {
         return this.latitude;
     }
 
+    public void setLatitude(int changed) {
+        latitude = changed;
+    }
+
     public int getHeight() {
         return this.height;
+    }
+
+    public void setHeight(int changed) {
+        height = Math.min(changed, 100);
     }
 }

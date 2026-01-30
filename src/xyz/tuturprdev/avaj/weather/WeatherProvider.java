@@ -5,6 +5,7 @@ import xyz.tuturprdev.avaj.vehicle.Coordinates;
 public class WeatherProvider {
 
     private static WeatherProvider instance = null;
+    private static int counter = 0;
 
     private WeatherProvider() {}
 
@@ -22,9 +23,11 @@ public class WeatherProvider {
         int total =
                 p_coordinates.getLongitude()
                 + p_coordinates.getLatitude()
-                + p_coordinates.getHeight();
+                + p_coordinates.getHeight()
+                + counter;
         WeatherConditions[] conditions = WeatherConditions.values();
-        int weather = (total % conditions.length) + 1;
+        int weather = (total % 4);
+        counter++;
         return (conditions[weather].name());
     }
 }
