@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Tower {
-    private List<Flyable> observers = new ArrayList<>();
+    private final List<Flyable> observers = new ArrayList<>();
 
     public void register(Flyable p_flyable)
     {
@@ -19,10 +19,13 @@ public class Tower {
         observers.remove(p_flyable);
         System.out.printf("Tower says: %s unregistered from weather tower%n", p_flyable.getCallsign());
     }
-    protected void conditionChanged()
+    protected boolean conditionChanged()
     {
+        if (observers.isEmpty())
+            return false;
         for (Flyable f : new ArrayList<>(observers)) {
             f.updateConditions();
         }
+        return true;
     }
 }
