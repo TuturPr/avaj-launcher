@@ -1,4 +1,4 @@
-package xyz.tuturprdev.ajav.weather;
+package xyz.tuturprdev.avaj.weather;
 
 public enum WeatherConditions {
     RAIN,

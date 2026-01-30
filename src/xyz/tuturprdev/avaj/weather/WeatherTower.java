@@ -1,6 +1,6 @@
-package xyz.tuturprdev.ajav.weather;
+package xyz.tuturprdev.avaj.weather;
 
-import xyz.tuturprdev.ajav.vehicle.Coordinates;
+import xyz.tuturprdev.avaj.vehicle.Coordinates;
 
 public class WeatherTower extends Tower {
 
