@@ -25,12 +25,6 @@ public class Helicopter extends Aircraft {
             case "SNOW":
                 coordinates.setHeight(coordinates.getHeight() - 12);
                 System.out.printf("%s:  My rotor is going to freeze!%n", getCallsign());
-                if ((coordinates.getHeight() - 12) <= 0) {
-                    System.out.printf("%s landing.%n", getCallsign());
-                    weatherTower.unregister(this);
-                    break;
-                }
-                break;
         }
     }
 
