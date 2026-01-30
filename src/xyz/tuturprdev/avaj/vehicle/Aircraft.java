@@ -11,4 +11,8 @@ public abstract class Aircraft extends Flyable {
         this.coordinates = p_coordinates;
     }
 
+    @Override
+    public Coordinates getCoordinates() {
+        return coordinates;
+    }
 }

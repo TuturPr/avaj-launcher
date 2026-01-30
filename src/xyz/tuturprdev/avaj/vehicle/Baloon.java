@@ -25,12 +25,6 @@ public class Baloon extends Aircraft {
             case "SNOW":
                 coordinates.setHeight(coordinates.getHeight() - 15);
                 System.out.printf("%s:  It's snowing. We're gonna crash.%n", getCallsign());
-                if ((coordinates.getHeight() - 15) <= 0) {
-                    System.out.printf("%s landing.%n", getCallsign());
-                    weatherTower.unregister(this);
-                    break;
-                }
-                break;
         }
     }
 
