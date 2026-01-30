@@ -10,15 +10,15 @@ public class Baloon extends Aircraft {
     public void updateConditions() {
         switch (weatherTower.getWeather(coordinates)) {
             case "RAIN":
-                coordinates.setLatitude(coordinates.getHeight() - 5);
+                coordinates.setHeight(coordinates.getHeight() - 5);
                 System.out.printf("%s: Damn you rain! You messed up my baloon. %n", getCallsign());
                 break;
             case "FOG":
-                coordinates.setLatitude(coordinates.getHeight() - 3);
+                coordinates.setHeight(coordinates.getHeight() - 3);
                 System.out.printf("%s: I can't see anything !%n", getCallsign());
                 break;
             case "SUN":
-                coordinates.setLatitude(coordinates.getLongitude() + 2);
+                coordinates.setLongitude(coordinates.getLongitude() + 2);
                 coordinates.setHeight(coordinates.getHeight() + 4);
                 System.out.printf("%s: Let's enjoy the good weather and take some pics.%n", getCallsign());
                 break;
