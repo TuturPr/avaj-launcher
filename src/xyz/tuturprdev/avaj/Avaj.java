@@ -23,7 +23,8 @@ public class Avaj {
             for (Flyable f : aircraftList)
                 f.registerTower(tower);
             while (simNum != 0) {
-                tower.changeWeather();
+                if (!tower.changeWeather())
+                    break;
                 simNum--;
             }
         } catch (IOException | IllegalArgumentException e) {
