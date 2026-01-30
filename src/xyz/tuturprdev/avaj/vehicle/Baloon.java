@@ -35,8 +35,7 @@ public class Baloon extends Aircraft {
     }
 
     @Override
-    public String getCallsign()
-    {
+    public String getCallsign() {
         return String.format("%s#%s(%d)", getClass().getSimpleName(), name, id);
     }
 }

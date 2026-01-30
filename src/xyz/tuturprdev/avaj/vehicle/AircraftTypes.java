@@ -12,8 +12,7 @@ public enum AircraftTypes {
         this.type = type;
     }
 
-    static AircraftTypes get_for_type(String type)
-    {
+    static AircraftTypes get_for_type(String type) {
         for (AircraftTypes value : AircraftTypes.values()) {
             if (value.matchType(type))
                 return value;
