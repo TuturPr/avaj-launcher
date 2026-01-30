@@ -1,4 +1,4 @@
-package xyz.tuturprdev.ajav.vehicle;
+package xyz.tuturprdev.avaj.vehicle;
 
 public class Baloon extends Aircraft {
 

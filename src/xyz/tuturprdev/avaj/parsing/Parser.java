@@ -1,13 +1,10 @@
-package xyz.tuturprdev.ajav.parsing;
+package xyz.tuturprdev.avaj.parsing;
 
-import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
-import xyz.tuturprdev.ajav.Ajav;
-import xyz.tuturprdev.ajav.vehicle.AircraftFactory;
-import xyz.tuturprdev.ajav.vehicle.AircraftTypes;
-import xyz.tuturprdev.ajav.vehicle.Coordinates;
+import xyz.tuturprdev.avaj.Avaj;
+import xyz.tuturprdev.avaj.vehicle.AircraftFactory;
+import xyz.tuturprdev.avaj.vehicle.Coordinates;
 
 import java.io.*;
-import java.util.Scanner;
 
 public class Parser {
 
@@ -38,7 +35,7 @@ public class Parser {
                 if (splitted.length != 5)
                     throw new IllegalArgumentException("Invalid number of arguments on line " + lineNumber);
 
-                Ajav.aircraftList.add(
+                Avaj.aircraftList.add(
                         aircraftFactory.newAircraft(
                             splitted[0],
                             splitted[1],

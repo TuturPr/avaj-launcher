@@ -1,16 +1,14 @@
-package xyz.tuturprdev.ajav;
+package xyz.tuturprdev.avaj;
 
 import com.sun.istack.internal.NotNull;
-import xyz.tuturprdev.ajav.parsing.Parser;
-import xyz.tuturprdev.ajav.vehicle.Aircraft;
-import xyz.tuturprdev.ajav.vehicle.Flyable;
-import xyz.tuturprdev.ajav.weather.WeatherProvider;
+import xyz.tuturprdev.avaj.parsing.Parser;
+import xyz.tuturprdev.avaj.vehicle.Flyable;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Ajav {
+public class Avaj {
 
     public static List<Flyable> aircraftList = new ArrayList<>();
     public static void main (@NotNull String[] args)

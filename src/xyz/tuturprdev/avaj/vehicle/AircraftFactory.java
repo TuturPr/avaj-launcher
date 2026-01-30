@@ -1,6 +1,5 @@
-package xyz.tuturprdev.ajav.vehicle;
+package xyz.tuturprdev.avaj.vehicle;
 
-import java.util.UUID;
 import java.util.concurrent.atomic.AtomicLong;
 
 public class AircraftFactory {

@@ -1,6 +1,6 @@
-package xyz.tuturprdev.ajav.vehicle;
+package xyz.tuturprdev.avaj.vehicle;
 
-import xyz.tuturprdev.ajav.weather.WeatherTower;
+import xyz.tuturprdev.avaj.weather.WeatherTower;
 
 public abstract class Flyable {
 

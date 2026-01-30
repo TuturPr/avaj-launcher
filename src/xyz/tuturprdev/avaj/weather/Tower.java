@@ -1,6 +1,6 @@
-package xyz.tuturprdev.ajav.weather;
+package xyz.tuturprdev.avaj.weather;
 
-import xyz.tuturprdev.ajav.vehicle.Flyable;
+import xyz.tuturprdev.avaj.vehicle.Flyable;
 import java.util.List;
 
 public class Tower {
