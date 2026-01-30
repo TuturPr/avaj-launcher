@@ -11,15 +11,15 @@ public class Helicopter extends Aircraft {
     {
         switch (weatherTower.getWeather(coordinates)) {
             case "RAIN":
-                coordinates.setLatitude(coordinates.getLongitude() + 5);
+                coordinates.setLongitude(coordinates.getLongitude() + 5);
                 System.out.printf("%s: It's raining. Glad I took my umbrella.%n", getCallsign());
                 break;
             case "FOG":
-                coordinates.setLatitude(coordinates.getLongitude() + 1);
+                coordinates.setLongitude(coordinates.getLongitude() + 1);
                 System.out.printf("%s: Cutting the clouds !%n", getCallsign());
                 break;
             case "SUN":
-                coordinates.setLatitude(coordinates.getLongitude() + 10);
+                coordinates.setLongitude(coordinates.getLongitude() + 10);
                 coordinates.setHeight(coordinates.getHeight() + 4);
                 System.out.printf("%s: : This is hot.%n", getCallsign());
                 break;
