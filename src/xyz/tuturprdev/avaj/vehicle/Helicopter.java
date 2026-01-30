@@ -7,8 +7,7 @@ public class Helicopter extends Aircraft {
     }
 
     @Override
-    public void updateConditions()
-    {
+    public void updateConditions() {
         switch (weatherTower.getWeather(coordinates)) {
             case "RAIN":
                 coordinates.setLongitude(coordinates.getLongitude() + 5);
@@ -36,8 +35,7 @@ public class Helicopter extends Aircraft {
     }
 
     @Override
-    public String getCallsign()
-    {
+    public String getCallsign() {
         return String.format("%s#%s(%d)", getClass().getSimpleName(), name, id);
     }
 }

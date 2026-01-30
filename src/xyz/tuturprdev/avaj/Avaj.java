@@ -12,8 +12,7 @@ import java.util.List;
 public class Avaj {
 
     public static List<Flyable> aircraftList = new ArrayList<>();
-    public static void main (@NotNull String[] args)
-    {
+    public static void main (@NotNull String[] args) {
         try {
             if (args.length != 1)
                 throw new IllegalArgumentException("Usage : Java <program name> <file name>");

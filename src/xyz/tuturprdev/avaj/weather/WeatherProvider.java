@@ -9,8 +9,7 @@ public class WeatherProvider {
 
     private WeatherProvider() {}
 
-    public static WeatherProvider getInstance()
-    {
+    public static WeatherProvider getInstance() {
         if (instance == null) {
             instance = new WeatherProvider();
         }
@@ -18,8 +17,7 @@ public class WeatherProvider {
     }
 
 
-    public String getCurrentWeather(Coordinates p_coordinates)
-    {
+    public String getCurrentWeather(Coordinates p_coordinates) {
         int total =
                 p_coordinates.getLongitude()
                 + p_coordinates.getLatitude()
