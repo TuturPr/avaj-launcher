@@ -1,5 +1,6 @@
 package xyz.tuturprdev.avaj;
 
+import xyz.tuturprdev.avaj.exception.BadExecException;
 import xyz.tuturprdev.avaj.parsing.Parser;
 import xyz.tuturprdev.avaj.vehicle.Flyable;
 import xyz.tuturprdev.avaj.weather.WeatherTower;
@@ -14,7 +15,7 @@ public class Avaj {
     public static void main (String[] args) {
         try {
             if (args.length != 1)
-                throw new IllegalArgumentException("Usage : Java <program name> <file name>");
+                throw new BadExecException("Usage : Java <program name> <file name>");
             int simNum;
             simNum = Parser.parseScenario(args[0]);
             WeatherTower tower = new WeatherTower();
@@ -25,7 +26,7 @@ public class Avaj {
                     break;
                 simNum--;
             }
-        } catch (IOException | IllegalArgumentException e) {
+        } catch (IOException | IllegalArgumentException | BadExecException e) {
             System.err.println("Error : " + e.getMessage());
         }
     }
