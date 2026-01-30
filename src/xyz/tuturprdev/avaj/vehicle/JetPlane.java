@@ -25,12 +25,6 @@ public class JetPlane extends Aircraft {
             case "SNOW":
                 coordinates.setHeight(coordinates.getHeight() - 7);
                 System.out.printf("%s: OMG! Winter is coming!%n", getCallsign());
-                if ((coordinates.getHeight() - 7) <= 0) {
-                    System.out.printf("%s landing.%n", getCallsign());
-                    weatherTower.unregister(this);
-                    break;
-                }
-                break;
         }
     }
 
