@@ -5,7 +5,7 @@ public class Coordinates {
     private int latitude;
     private int height;
 
-    public Coordinates(int p_longitude, int p_latitude, int p_height) {
+    Coordinates(int p_longitude, int p_latitude, int p_height) {
         if (p_longitude < 0)
             throw new IllegalArgumentException("Longitude must be positive");
 
