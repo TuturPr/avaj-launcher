@@ -1,5 +1,6 @@
 package xyz.tuturprdev.avaj.weather;
 
+import xyz.tuturprdev.avaj.parsing.Printer;
 import xyz.tuturprdev.avaj.vehicle.Flyable;
 
 import java.util.ArrayList;
@@ -11,13 +12,13 @@ public class Tower {
 
     public void register(Flyable p_flyable) {
         observers.add(p_flyable);
-        System.out.printf("Tower says: %s registered to weather tower%n", p_flyable.getCallsign());
+        Printer.getInstance().write(String.format("Tower says: %s registered to weather tower%n", p_flyable.getCallsign()));
     }
 
     @Deprecated
     public void unregister(Flyable p_flyable) {
         observers.remove(p_flyable);
-        System.out.printf("Tower says: %s unregistered from weather tower%n", p_flyable.getCallsign());
+        Printer.getInstance().write(String.format("Tower says: %s unregistered from weather tower%n", p_flyable.getCallsign()));
     }
 
     protected boolean conditionChanged() {
@@ -28,15 +29,13 @@ public class Tower {
         while (it.hasNext()) {
             Flyable f = it.next();
             f.updateConditions();
-
             if (f.getCoordinates().getHeight() <= 0) {
                 f.getCoordinates().setHeight(0);
-                System.out.printf("%s landing.%n", f.getCallsign());
+                Printer.getInstance().write(String.format("%s landing.%n", f.getCallsign()));
                 it.remove();
-                System.out.printf("Tower says: %s unregistered from weather tower%n", f.getCallsign());
+                Printer.getInstance().write(String.format("Tower says: %s unregistered from weather tower%n", f.getCallsign()));
             }
         }
         return true;
     }
-
 }
