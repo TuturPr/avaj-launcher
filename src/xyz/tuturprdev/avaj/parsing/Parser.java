@@ -5,6 +5,9 @@ import xyz.tuturprdev.avaj.vehicle.AircraftFactory;
 import xyz.tuturprdev.avaj.vehicle.Coordinates;
 
 import java.io.*;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
+import java.util.Arrays;
 
 public class Parser {
 
@@ -34,20 +37,23 @@ public class Parser {
 
                 if (splitted.length != 5)
                     throw new IllegalArgumentException("Invalid number of arguments on line " + lineNumber);
-
+                Constructor<?> coordinates = Arrays.stream(Coordinates.class.getDeclaredConstructors()).findFirst().get();
+                coordinates.setAccessible(true);
                 Avaj.aircraftList.add(
                         aircraftFactory.newAircraft(
                             splitted[0],
                             splitted[1],
-                            new Coordinates(
-                                    Integer.parseInt(splitted[2]),
-                                    Integer.parseInt(splitted[3]),
-                                    Integer.parseInt(splitted[4])
-                            )
+                                (Coordinates)coordinates.newInstance(
+                                        Integer.parseInt(splitted[2]),
+                                        Integer.parseInt(splitted[3]),
+                                        Integer.parseInt(splitted[4]))
                         )
                 );
+                coordinates.setAccessible(false);
                 lineNumber++;
             }
+        } catch (InstantiationException | InvocationTargetException | IllegalAccessException e) {
+            throw new RuntimeException(e);
         }
         return simNum;
     }
